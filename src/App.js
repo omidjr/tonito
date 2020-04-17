@@ -10,7 +10,7 @@ function App() {
     <>
       <MuiThemeProvider theme={newTheme}>
         <NavBar />
-        <h1>Tonito</h1>
+        <h1>Hello Tonito</h1>
       </MuiThemeProvider>
     </>
   );
