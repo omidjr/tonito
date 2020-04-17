@@ -1,5 +1,6 @@
 import React from "react";
 import { useStyles } from "../Styles/Styles";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 
 export const NavBar = () => {
@@ -15,7 +16,7 @@ export const NavBar = () => {
           Tonito
         </Typography>
         <Button className={classes.cart} variant="contained">
-          Cart
+          <ShoppingCartIcon />
         </Button>
       </Toolbar>
     </AppBar>

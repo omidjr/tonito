@@ -26,4 +26,13 @@ export const useStyles = makeStyles({
     color: "#fff",
     background: `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`,
   },
+  banner: {
+    height: "50vh",
+    borderRadius: "7px",
+    marginTop: "25px",
+    backgroundImage: 'url("img/banner.jpg")',
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    filter: "contrast(75%)",
+  },
 });
