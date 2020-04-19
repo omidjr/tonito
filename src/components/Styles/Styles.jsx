@@ -15,8 +15,7 @@ export const useStyles = makeStyles({
   },
   logo: {
     color: `${pizzaRed}`,
-    textAlign: "center",
-    flex: "1",
+    cursor: "pointer",
   },
   signUpButton: {
     color: `${pizzaRed}`,
