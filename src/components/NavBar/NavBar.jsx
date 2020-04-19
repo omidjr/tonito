@@ -10,23 +10,17 @@ export const NavBar = () => {
     <Grid container>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>
-          <Grid item>
-            <Button className={classes.signUpButton} variant="outlined">
-              Login
-            </Button>
-          </Grid>
+          <Button className={classes.signUpButton} variant="outlined">
+            Login
+          </Button>
           <Grid xs={6} />
-          <Grid item>
-            <Typography className={classes.logo} variant="h3">
-              Tonito
-            </Typography>
-          </Grid>
+          <Typography className={classes.logo} variant="h3">
+            Tonito
+          </Typography>
           <Grid xs={6} />
-          <Grid item>
-            <Button className={classes.cart} variant="contained">
-              <ShoppingCartIcon />
-            </Button>
-          </Grid>
+          <Button className={classes.cart} variant="contained">
+            <ShoppingCartIcon />
+          </Button>
         </Toolbar>
       </AppBar>
     </Grid>
