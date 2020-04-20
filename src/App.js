@@ -4,6 +4,7 @@ import { theme } from "./components/Styles/Styles";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Banner } from "./components/Banner/Banner";
 import { Features } from "./components/Features/Features";
+import { Menu } from "./components/Menu/Menu";
 
 const newTheme = responsiveFontSizes(theme);
 
@@ -14,7 +15,8 @@ function App() {
         <NavBar />
         <Banner />
         <Features />
-        <h1>Hello Tonito</h1>
+        <Menu />
+        <div style={{ height: "500px" }} />
       </MuiThemeProvider>
     </>
   );
