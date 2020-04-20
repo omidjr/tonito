@@ -50,7 +50,7 @@ export const Menu = () => {
           <Tab label="Drinks" {...a11yProps(2)} />
         </Tabs>
       </Paper>
-      <div style={{ height: "50px" }} />
+      <div style={{ height: "25px" }} />
       <TabPanel value={value} index={0}>
         <Grid container spacing={3}>
           {FoodData.map((food) =>
@@ -58,6 +58,23 @@ export const Menu = () => {
               <Grid item xs={12} sm={6} md={4}>
                 <div className={classes.menu}>
                   <FeatureImage img={food.img} />
+                  <Typography variant="h4" className={classes.menuLabel}>
+                    {food.name}
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    className={classes.menuLabel}
+                    style={{ paddingTop: "25px" }}
+                  >
+                    Extra olive oil, garlic, mozzarella, mushrooms and olives.
+                  </Typography>
+                  <div className={classes.sizes}>
+                    <hr className={classes.bar} />
+                    <Typography variant="h6" style={{ padding: "0px 25px" }}>
+                      Sizes
+                    </Typography>
+                    <hr className={classes.bar} />
+                  </div>
                 </div>
               </Grid>
             ) : null

@@ -77,6 +77,7 @@ export const useStyles = makeStyles({
     borderRadius: "1px",
   },
   menu: {
+    backgroundColor: "#e2e2e2",
     marginTop: "5px",
     transitionProperty: "box-shadow margin-top",
     transitionDuration: "0.2s",
@@ -88,5 +89,24 @@ export const useStyles = makeStyles({
       marginBottom: "5px",
       boxShadow: "0px 5px 10px 0px grey",
     },
+  },
+  menuLabel: {
+    paddingTop: "30px",
+    textAlign: "center",
+  },
+  sizes: {
+    marginRight: "8%",
+    marginLeft: "8%",
+    paddingTop: "25px",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: "1.2rem",
+  },
+  bar: {
+    flex: "auto",
+    border: "none",
+    height: "1px",
+    background: "#aaa",
   },
 });
