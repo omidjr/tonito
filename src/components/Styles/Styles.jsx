@@ -50,11 +50,16 @@ export const useStyles = makeStyles({
   },
   banner: {
     height: "50vh",
+    marginTop: "58px",
     width: "100%",
     marginBottom: "25px",
     backgroundImage: 'url("img/other/banner.jpg")',
     backgroundPosition: "center",
     backgroundSize: "cover",
     filter: "contrast(75%)",
+  },
+  features: {
+    marginRight: "5%",
+    marginLeft: "5%",
   },
 });

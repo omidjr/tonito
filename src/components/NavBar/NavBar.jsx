@@ -8,7 +8,7 @@ export const NavBar = () => {
 
   return (
     <Grid container>
-      <AppBar position="static" className={classes.navbar}>
+      <AppBar position="fixed" className={classes.navbar}>
         <Toolbar>
           <Button className={classes.signUpButton} variant="outlined">
             Login
