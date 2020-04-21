@@ -84,7 +84,6 @@ export const useStyles = makeStyles({
     boxShadow: "0px 0px 2px 0px grey",
     borderRadius: "7px",
     "&:hover": {
-      cursor: "pointer",
       marginTop: "0px",
       marginBottom: "5px",
       boxShadow: "0px 5px 10px 0px grey",
@@ -101,12 +100,11 @@ export const useStyles = makeStyles({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: "1.2rem",
   },
   bar: {
     flex: "auto",
     border: "none",
     height: "1px",
-    background: "#aaa",
+    background: "#504d4d",
   },
 });

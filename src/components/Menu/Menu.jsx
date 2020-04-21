@@ -1,7 +1,9 @@
 import React from "react";
-import { FoodData } from "../Data/FoodData";
-import { useStyles, FeatureImage } from "../Styles/Styles";
-import { Paper, Tabs, Tab, Typography, Grid } from "@material-ui/core";
+import { PizzaSets } from "./PizzaSets";
+import { Sides } from "./Sides";
+import { Drinks } from "./Drinks";
+import { useStyles } from "../Styles/Styles";
+import { Paper, Tabs, Tab, Typography } from "@material-ui/core";
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -52,60 +54,13 @@ export const Menu = () => {
       </Paper>
       <div style={{ height: "25px" }} />
       <TabPanel value={value} index={0}>
-        <Grid container spacing={3}>
-          {FoodData.map((food) =>
-            food.item === "Pizza" ? (
-              <Grid item xs={12} sm={6} md={4}>
-                <div className={classes.menu}>
-                  <FeatureImage img={food.img} />
-                  <Typography variant="h4" className={classes.menuLabel}>
-                    {food.name}
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    className={classes.menuLabel}
-                    style={{ paddingTop: "25px" }}
-                  >
-                    Extra olive oil, garlic, mozzarella, mushrooms and olives.
-                  </Typography>
-                  <div className={classes.sizes}>
-                    <hr className={classes.bar} />
-                    <Typography variant="h6" style={{ padding: "0px 25px" }}>
-                      Sizes
-                    </Typography>
-                    <hr className={classes.bar} />
-                  </div>
-                </div>
-              </Grid>
-            ) : null
-          )}
-        </Grid>
+        <PizzaSets />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Grid container spacing={3}>
-          {FoodData.map((food) =>
-            food.item === "Sides" ? (
-              <Grid item xs={12} sm={6} md={4}>
-                <div className={classes.menu}>
-                  <FeatureImage img={food.img} />
-                </div>
-              </Grid>
-            ) : null
-          )}
-        </Grid>
+        <Sides />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Grid container spacing={3}>
-          {FoodData.map((food) =>
-            food.item === "Drinks" ? (
-              <Grid item xs={12} sm={6} md={4}>
-                <div className={classes.menu}>
-                  <FeatureImage img={food.img} />
-                </div>
-              </Grid>
-            ) : null
-          )}
-        </Grid>
+        <Drinks />
       </TabPanel>
     </div>
   );

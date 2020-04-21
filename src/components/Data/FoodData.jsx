@@ -1,3 +1,10 @@
+export const formatPrice = (price) => {
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+};
+
 export const FoodData = [
   {
     name: "California Style",
@@ -5,7 +12,7 @@ export const FoodData = [
     section: "Top",
     item: "Pizza",
     price1: 15,
-    price2: 18,
+    price2: 19,
   },
   {
     name: "Hawaiian",
@@ -13,7 +20,7 @@ export const FoodData = [
     section: "Top",
     item: "Pizza",
     price1: 15,
-    price2: 18,
+    price2: 19,
   },
   {
     name: "Greek Style",
@@ -21,7 +28,7 @@ export const FoodData = [
     section: "Top",
     item: "Pizza",
     price1: 14,
-    price2: 17,
+    price2: 18,
   },
   {
     name: "Sicilian",
@@ -29,7 +36,7 @@ export const FoodData = [
     section: "Top",
     item: "Pizza",
     price1: 17,
-    price2: 20,
+    price2: 21,
   },
   {
     name: "Seafood Pizza",
@@ -37,7 +44,7 @@ export const FoodData = [
     section: "Special",
     item: "Pizza",
     price1: 11,
-    price2: 14,
+    price2: 15,
   },
   {
     name: "Diavola",
@@ -45,7 +52,7 @@ export const FoodData = [
     section: "Special",
     item: "Pizza",
     price1: 12.5,
-    price2: 15.5,
+    price2: 16.5,
   },
   {
     name: "Ortolana",
@@ -53,7 +60,7 @@ export const FoodData = [
     section: "Special",
     item: "Pizza",
     price1: 13,
-    price2: 16,
+    price2: 17,
   },
   {
     name: "Carbonara",
@@ -61,7 +68,7 @@ export const FoodData = [
     section: "Special",
     item: "Pizza",
     price1: 13.5,
-    price2: 16.5,
+    price2: 17.5,
   },
   {
     name: "Rustica",
@@ -69,60 +76,69 @@ export const FoodData = [
     section: "Special",
     item: "Pizza",
     price1: 13,
-    price2: 16,
+    price2: 17,
   },
   {
     name: "Fries",
     img: "/img/food/sides/fries.jpeg",
     item: "Sides",
-    price: 6,
+    price1: 6,
+    price2: 10,
   },
   {
     name: "Olives",
     img: "/img/food/sides/olives.jpg",
     item: "Sides",
-    price: 7,
+    price1: 7,
+    price2: 11,
   },
   {
-    name: "Salad",
+    name: "Caesar Salad",
     img: "/img/food/sides/salad.jpg",
     item: "Sides",
-    price: 8.5,
+    price1: 8.5,
+    price2: 12.5,
   },
   {
     name: "Mexican Corn",
     img: "/img/food/sides/corn.jpg",
     item: "Sides",
-    price: 8.5,
+    price1: 8.5,
+    price2: 12.5,
   },
   {
     name: "CokaCola",
     img: "/img/food/drinks/cokacola.jpg",
     item: "Drinks",
-    price: 3,
+    price1: 3,
+    price2: 7,
   },
   {
     name: "Pepsi",
     img: "/img/food/drinks/pepsi.jpg",
     item: "Drinks",
-    price: 3,
+    price1: 3,
+    price2: 7,
   },
   {
     name: "Sprite",
     img: "/img/food/drinks/sprite.jpg",
     item: "Drinks",
-    price: 3,
+    price1: 3,
+    price2: 7,
   },
   {
     name: "Fanta",
     img: "/img/food/drinks/fanta.jpg",
     item: "Drinks",
-    price: 3,
+    price1: 3,
+    price2: 7,
   },
   {
     name: "Mineral Water",
     img: "/img/food/drinks/mineral-water.jpg",
     item: "Drinks",
-    price: 3,
+    price1: 1.5,
+    price2: 4.5,
   },
 ];
