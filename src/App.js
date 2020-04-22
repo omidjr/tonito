@@ -5,6 +5,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Banner } from "./components/Banner/Banner";
 import { Features } from "./components/Features/Features";
 import { Menu } from "./components/Menu/Menu";
+import { SpecialOffer } from "./components/SpecialOffer/SpecialOffer";
 
 const newTheme = responsiveFontSizes(theme);
 
@@ -16,6 +17,7 @@ function App() {
         <Banner />
         <Features />
         <Menu />
+        <SpecialOffer />
         <div style={{ height: "500px" }} />
       </MuiThemeProvider>
     </>

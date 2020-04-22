@@ -70,7 +70,7 @@ export const Sides = () => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ borderRadius: "10%", fontSize: "1rem" }}
+                        style={{ fontSize: "1rem" }}
                       >
                         Single
                       </Button>
@@ -91,7 +91,7 @@ export const Sides = () => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ borderRadius: "10%", fontSize: "1rem" }}
+                        style={{ fontSize: "1rem" }}
                       >
                         Family
                       </Button>

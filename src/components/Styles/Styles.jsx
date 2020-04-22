@@ -56,7 +56,7 @@ export const useStyles = makeStyles({
     backgroundImage: 'url("img/other/banner.jpg")',
     backgroundPosition: "center",
     backgroundSize: "cover",
-    filter: "contrast(75%)",
+    filter: "contrast(85%)",
   },
   features: {
     marginRight: "8%",
@@ -106,5 +106,64 @@ export const useStyles = makeStyles({
     border: "none",
     height: "1px",
     background: "#504d4d",
+  },
+  special: {
+    position: "relative",
+    marginTop: "50px",
+    width: "100%",
+    height: "77vh",
+  },
+  specialImage: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    backgroundImage: 'url("img/food/pizza/hawaiian-pizza.jpg")',
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    filter: "drop-shadow(15px 15px 15px gray) blur(3px) brightness(60%)",
+  },
+  specialText: {
+    position: "absolute",
+    color: "#fff",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-63%, -50%)",
+  },
+  preTitle: {
+    position: "relative",
+    paddingTop: "20px",
+  },
+  productPrice: {
+    fontSize: "6.625em",
+    color: "#fff",
+    lineHeight: "0.6em",
+    display: "flex",
+  },
+  price: {
+    fontWeight: "bold",
+    display: "block",
+    textAlign: "right",
+  },
+  currency: {
+    lineHeight: "1em",
+    fontSize: "0.5em",
+    verticalAlign: "top",
+    fontWeight: "300",
+  },
+  decimals: {
+    color: "#23ef91",
+    lineHeight: "1em",
+    fontSize: "0.5em",
+    verticalAlign: "top",
+  },
+  priceInfo: {
+    fontSize: "2rem",
+    position: "relative",
+    bottom: "-10px",
+    right: "55px",
+    textDecoration: "line-through",
+  },
+  productInfo: {
+    paddingBottom: "25px",
   },
 });

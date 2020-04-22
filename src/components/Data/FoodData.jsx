@@ -19,7 +19,7 @@ export const FoodData = [
     img: "/img/food/pizza/hawaiian-pizza.jpg",
     section: "Top",
     item: "Pizza",
-    price1: 15,
+    price1: 9.99,
     price2: 19,
   },
   {

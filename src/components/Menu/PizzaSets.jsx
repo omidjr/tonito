@@ -87,7 +87,7 @@ export const PizzaSets = () => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ borderRadius: "10%", fontSize: "1rem" }}
+                        style={{ fontSize: "1rem" }}
                       >
                         22cm
                       </Button>
@@ -108,7 +108,7 @@ export const PizzaSets = () => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ borderRadius: "10%", fontSize: "1rem" }}
+                        style={{ fontSize: "1rem" }}
                       >
                         29cm
                       </Button>
