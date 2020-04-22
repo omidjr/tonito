@@ -5,7 +5,15 @@ import { useStyles, FeatureImage } from "../Styles/Styles";
 import { FoodData, formatPrice } from "../Data/FoodData";
 
 export const Sides = () => {
+  const [loading, setLoading] = React.useState(true);
   const classes = useStyles();
+
+  React.useEffect(() => {
+    setLoading(false);
+    setTimeout(() => {
+      setLoading(true);
+    }, 1000);
+  }, []);
 
   return (
     <Grid container spacing={3}>
@@ -13,7 +21,7 @@ export const Sides = () => {
         food.item === "Sides" ? (
           <Grid item xs={12} sm={6} md={4}>
             <div className={classes.menu}>
-              {food.img ? (
+              {loading && food.img ? (
                 <FeatureImage img={food.img} />
               ) : (
                 <Skeleton
@@ -22,7 +30,7 @@ export const Sides = () => {
                   height={250}
                 />
               )}
-              {food.img ? (
+              {loading && food.img ? (
                 <Typography variant="h4" className={classes.menuLabel}>
                   {food.name}
                 </Typography>
@@ -35,7 +43,7 @@ export const Sides = () => {
                   }}
                 />
               )}
-              {food.img ? (
+              {loading && food.img ? (
                 <>
                   <div className={classes.sizes}>
                     <hr className={classes.bar} />
