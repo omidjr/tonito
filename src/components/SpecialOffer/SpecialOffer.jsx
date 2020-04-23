@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
-import { useStyles, pizzaRed } from "../Styles/Styles";
+import { useStyles } from "../Styles/Styles";
 
 export const SpecialOffer = () => {
   const classes = useStyles();
