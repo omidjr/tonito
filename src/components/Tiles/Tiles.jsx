@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import { useStyles } from "../Styles/Styles";
-import { findByLabelText } from "@testing-library/react";
 
 export const Tiles = () => {
   const classes = useStyles();
@@ -9,7 +8,7 @@ export const Tiles = () => {
   return (
     <div
       className={classes.features}
-      style={{ marginTop: "80px", marginBottom: "80px" }}
+      style={{ marginTop: "120px", marginBottom: "120px" }}
     >
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} md={3}>

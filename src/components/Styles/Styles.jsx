@@ -166,4 +166,37 @@ export const useStyles = makeStyles({
   productInfo: {
     paddingBottom: "25px",
   },
+  footer: {
+    backgroundColor: "#2C2C2C",
+    color: "#fff",
+    // height: "200px",
+  },
+  footerContainer: {
+    marginRight: "15%",
+    marginLeft: "15%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+  footerSocial: {
+    paddingTop: "50px",
+    "& svg:hover": {
+      color: `${pizzaRed}`,
+      transition: "ease-in-out .3s",
+    },
+  },
+  footerAddress: {
+    width: "100%",
+    marginBottom: "50px",
+  },
+  footerBtn: {
+    bottom: "0",
+    color: "#fff",
+    fontSize: "0.875em",
+    background: `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`,
+    padding: "1.214em 2em",
+    borderTopLeftRadius: "18px",
+    borderTopRightRadius: "18px",
+  },
 });
