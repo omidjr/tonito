@@ -7,7 +7,10 @@ export const Tiles = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.features} style={{ marginTop: "50px" }}>
+    <div
+      className={classes.features}
+      style={{ marginTop: "80px", marginBottom: "80px" }}
+    >
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} md={3}>
           <div
