@@ -2,7 +2,9 @@ import React from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { useStyles } from "../Styles/Styles";
 
-export const SpecialOffer = () => {
+let order22 = {};
+
+export const SpecialOffer = ({ orders, setOrders }) => {
   const classes = useStyles();
 
   return (
@@ -44,6 +46,14 @@ export const SpecialOffer = () => {
             className={classes.cart}
             variant="contained"
             style={{ fontSize: "1rem" }}
+            onClick={() => {
+              order22 = {
+                name: "Hawaiin",
+                size: "22cm",
+                price: 9.99,
+              };
+              setOrders([...orders, order22]);
+            }}
           >
             Order Now
           </Button>

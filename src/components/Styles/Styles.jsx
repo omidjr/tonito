@@ -24,6 +24,54 @@ export const Label = styled.div`
   // margin-top: 50px;
 `;
 
+export const OrderStyled = styled.div`
+  position: fixed;
+  right: 0px;
+  top: 55px;
+  width: 30%;
+  height: calc(100% - 55px);
+  z-index: 999;
+  padding-top: 15px;
+  background-color: white;
+  overflow: auto;
+  border: 1px solid #efefef;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  @media (min-width: 500px) {
+    width: 40%;
+  }
+  @media (min-width: 1025px) {
+    width: 30%;
+  }
+`;
+
+export const OrderContent = styled.div`
+  padding: 20px;
+  height: 100%;
+  ${({ emptyCart }) =>
+    emptyCart
+      ? `
+  {
+    & div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & img {
+      max-width: 275px;
+    }
+    & span {
+      color: #ccc;
+      text-align: center;
+    }
+  } 
+  }`
+      : ``}
+`;
+
 export const theme = createMuiTheme({
   typography: {
     fontFamily: ["Righteous"],
@@ -31,6 +79,7 @@ export const theme = createMuiTheme({
 });
 
 export const pizzaRed = "#ef4123";
+const bg = `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`;
 
 export const useStyles = makeStyles({
   navbar: {
@@ -46,7 +95,7 @@ export const useStyles = makeStyles({
   },
   cart: {
     color: "#fff",
-    background: `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`,
+    background: `${bg}`,
   },
   banner: {
     height: "50vh",
@@ -169,7 +218,6 @@ export const useStyles = makeStyles({
   footer: {
     backgroundColor: "#2C2C2C",
     color: "#fff",
-    // height: "200px",
   },
   footerContainer: {
     marginRight: "15%",
@@ -194,9 +242,14 @@ export const useStyles = makeStyles({
     bottom: "0",
     color: "#fff",
     fontSize: "0.875em",
-    background: `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`,
+    background: `${bg}`,
     padding: "1.214em 2em",
     borderTopLeftRadius: "18px",
     borderTopRightRadius: "18px",
+  },
+  orderContainer: {
+    marginRight: "8%",
+    marginLeft: "8%",
+    marginTop: "10px",
   },
 });

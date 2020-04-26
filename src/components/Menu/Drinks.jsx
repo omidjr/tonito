@@ -4,7 +4,7 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import { useStyles, FeatureImage } from "../Styles/Styles";
 import { FoodData, formatPrice } from "../Data/FoodData";
 
-export const Drinks = () => {
+export const Drinks = ({ orders, setOrders }) => {
   const [loading, setLoading] = React.useState(true);
   const classes = useStyles();
 
@@ -14,6 +14,9 @@ export const Drinks = () => {
       setLoading(true);
     }, 1000);
   }, []);
+
+  let orderSingle = {};
+  let orderFamily = {};
 
   return (
     <Grid container spacing={3}>
@@ -71,6 +74,14 @@ export const Drinks = () => {
                         className={classes.cart}
                         variant="contained"
                         style={{ fontSize: "1rem" }}
+                        onClick={() => {
+                          orderSingle = {
+                            name: food.name,
+                            size: "Single",
+                            price: food.price[0],
+                          };
+                          setOrders([...orders, orderSingle]);
+                        }}
                       >
                         Single
                       </Button>
@@ -78,7 +89,7 @@ export const Drinks = () => {
                         style={{ padding: "5px 0px 0px 19%" }}
                         variant="subtitle1"
                       >
-                        {formatPrice(food.price1)}
+                        {formatPrice(food.price[0])}
                       </Typography>
                     </div>
                     <div
@@ -92,6 +103,14 @@ export const Drinks = () => {
                         className={classes.cart}
                         variant="contained"
                         style={{ fontSize: "1rem" }}
+                        onClick={() => {
+                          orderFamily = {
+                            name: food.name,
+                            size: "Family",
+                            price: food.price[1],
+                          };
+                          setOrders([...orders, orderFamily]);
+                        }}
                       >
                         Family
                       </Button>
@@ -99,7 +118,7 @@ export const Drinks = () => {
                         style={{ padding: "5px 0px 0px 25%" }}
                         variant="subtitle1"
                       >
-                        {formatPrice(food.price2)}
+                        {formatPrice(food.price[1])}
                       </Typography>
                     </div>
                   </div>

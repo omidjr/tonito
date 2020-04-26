@@ -3,7 +3,7 @@ import { useStyles } from "../Styles/Styles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core";
 
-export const NavBar = () => {
+export const NavBar = ({ openDrawer, setOpenDrawer }) => {
   const classes = useStyles();
 
   return (
@@ -18,7 +18,11 @@ export const NavBar = () => {
             Tonito
           </Typography>
           <Grid xs={6} />
-          <Button className={classes.cart} variant="contained">
+          <Button
+            onClick={() => setOpenDrawer(!openDrawer)}
+            className={classes.cart}
+            variant="contained"
+          >
             <ShoppingCartIcon />
           </Button>
         </Toolbar>

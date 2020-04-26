@@ -9,18 +9,25 @@ import { SpecialOffer } from "./components/SpecialOffer/SpecialOffer";
 import { Tiles } from "./components/Tiles/Tiles";
 import { Gallery } from "./components/Gallery/Gallery";
 import { Footer } from "./components/Footer/Footer";
+import { useOpenDrawer } from "./components/Hook/useOpenDrawer";
+import { Order } from "./components/Order/Order";
+import { useOrders } from "./components/Hook/useOrders";
 
 const newTheme = responsiveFontSizes(theme);
 
 function App() {
+  const openDrawer = useOpenDrawer();
+  const orders = useOrders();
+
   return (
     <>
       <MuiThemeProvider theme={newTheme}>
-        <NavBar />
+        <NavBar {...openDrawer} />
+        <Order {...openDrawer} {...orders} />
         <Banner />
         <Features />
-        <Menu />
-        <SpecialOffer />
+        <Menu {...orders} />
+        <SpecialOffer {...orders} />
         <Tiles />
         <Gallery />
         <Footer />

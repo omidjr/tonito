@@ -29,7 +29,7 @@ const a11yProps = (index) => {
   };
 };
 
-export const Menu = () => {
+export const Menu = ({ orders, setOrders }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -54,13 +54,13 @@ export const Menu = () => {
       </Paper>
       <div style={{ height: "25px" }} />
       <TabPanel value={value} index={0}>
-        <PizzaSets />
+        <PizzaSets orders={orders} setOrders={setOrders} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Sides />
+        <Sides orders={orders} setOrders={setOrders} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Drinks />
+        <Drinks orders={orders} setOrders={setOrders} />
       </TabPanel>
     </div>
   );

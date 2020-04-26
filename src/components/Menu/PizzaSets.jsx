@@ -4,7 +4,7 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import { useStyles, FeatureImage } from "../Styles/Styles";
 import { FoodData, formatPrice } from "../Data/FoodData";
 
-export const PizzaSets = () => {
+export const PizzaSets = ({ orders, setOrders }) => {
   const [loading, setLoading] = React.useState(true);
   const classes = useStyles();
 
@@ -14,6 +14,9 @@ export const PizzaSets = () => {
       setLoading(true);
     }, 950);
   }, []);
+
+  let order22 = {};
+  let order29 = {};
 
   return (
     <Grid container spacing={3}>
@@ -88,6 +91,14 @@ export const PizzaSets = () => {
                         className={classes.cart}
                         variant="contained"
                         style={{ fontSize: "1rem" }}
+                        onClick={() => {
+                          order22 = {
+                            name: food.name,
+                            size: "22cm",
+                            price: food.price[0],
+                          };
+                          setOrders([...orders, order22]);
+                        }}
                       >
                         22cm
                       </Button>
@@ -95,7 +106,7 @@ export const PizzaSets = () => {
                         style={{ padding: "5px 0px 0px 19%" }}
                         variant="subtitle1"
                       >
-                        {formatPrice(food.price1)}
+                        {formatPrice(food.price[0])}
                       </Typography>
                     </div>
                     <div
@@ -109,6 +120,14 @@ export const PizzaSets = () => {
                         className={classes.cart}
                         variant="contained"
                         style={{ fontSize: "1rem" }}
+                        onClick={() => {
+                          order29 = {
+                            name: food.name,
+                            size: "29cm",
+                            price: food.price[1],
+                          };
+                          setOrders([...orders, order29]);
+                        }}
                       >
                         29cm
                       </Button>
@@ -116,7 +135,7 @@ export const PizzaSets = () => {
                         style={{ padding: "5px 0px 0px 19%" }}
                         variant="subtitle1"
                       >
-                        {formatPrice(food.price2)}
+                        {formatPrice(food.price[1])}
                       </Typography>
                     </div>
                   </div>
