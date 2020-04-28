@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <MuiThemeProvider theme={newTheme}>
-        <NavBar {...openDrawer} />
+        <NavBar {...openDrawer} {...orders} />
         <Order {...openDrawer} {...orders} />
         <Banner />
         <Features />

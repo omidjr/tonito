@@ -48,7 +48,7 @@ export const SpecialOffer = ({ orders, setOrders }) => {
             style={{ fontSize: "1rem" }}
             onClick={() => {
               order22 = {
-                name: "Hawaiin",
+                name: "Hawaiian",
                 size: "22cm",
                 price: 9.99,
               };

@@ -1,9 +1,28 @@
 import React from "react";
-import { useStyles } from "../Styles/Styles";
+import { withStyles } from "@material-ui/core/styles";
+import { useStyles, pizzaRed } from "../Styles/Styles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Badge,
+  Grid,
+} from "@material-ui/core";
 
-export const NavBar = ({ openDrawer, setOpenDrawer }) => {
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    background: `${pizzaRed}`,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}))(Badge);
+
+export const NavBar = ({ openDrawer, setOpenDrawer, orders }) => {
   const classes = useStyles();
 
   return (
@@ -18,13 +37,14 @@ export const NavBar = ({ openDrawer, setOpenDrawer }) => {
             Tonito
           </Typography>
           <Grid xs={6} />
-          <Button
+          <IconButton
+            aria-label="cart"
             onClick={() => setOpenDrawer(!openDrawer)}
-            className={classes.cart}
-            variant="contained"
           >
-            <ShoppingCartIcon />
-          </Button>
+            <StyledBadge badgeContent={orders.length} color="secondary">
+              <ShoppingCartIcon style={{ color: "#000" }} />
+            </StyledBadge>
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Grid>

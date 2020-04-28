@@ -12,6 +12,12 @@ import {
 export const Order = ({ openDrawer, orders, setOrders }) => {
   const classes = useStyles();
 
+  const deleteItem = (index) => {
+    const newOrders = [...orders];
+    newOrders.splice(index, 1);
+    setOrders(newOrders);
+  };
+
   return openDrawer ? (
     <OrderStyled>
       {orders.length === 0 ? (
@@ -22,7 +28,7 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
           </div>
         </OrderContent>
       ) : (
-        orders.map((order) => (
+        orders.map((order, index) => (
           <div className={classes.orderContainer}>
             <div
               style={{
@@ -40,13 +46,13 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
                     {order.name}
                   </Typography>
                 </Grid>
-                <Grid item xs={3}>
-                  <Typography variant="h6">Q</Typography>
+                <Grid item xs={5}>
+                  <Typography variant="h6">Quantity:</Typography>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                   <Typography variant="h6">{order.size}</Typography>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                   <Typography variant="h6">
                     {formatPrice(order.price)}
                   </Typography>
@@ -57,6 +63,11 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
                       color: `${pizzaRed}`,
                       cursor: "pointer",
                       marginBottom: "20px",
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      // console.log(order.quantity);
+                      deleteItem(index);
                     }}
                   />
                 </Grid>

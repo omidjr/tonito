@@ -2,6 +2,9 @@ import { createMuiTheme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import styled from "styled-components";
 
+export const pizzaRed = "#ef4123";
+const bg = `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`;
+
 export const FeatureImage = styled.div`
   min-height: 250px;
   border-radius: 7px;
@@ -72,14 +75,40 @@ export const OrderContent = styled.div`
       : ``}
 `;
 
+export const QuantityInputStyled = styled.input`
+  background: #e2e2e2;
+  font-size: 20px;
+  width: 50px;
+  margin-top: 6px;
+  text-align: center;
+  border: none;
+  outline: none;
+`;
+
+export const IncrementContainer = styled.div`
+  display: flex;
+`;
+
+export const IncrementButton = styled.div`
+  width: 23px;
+  color: ${pizzaRed};
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 23px;
+  margin-top: 6px;
+  border: 1px solid ${pizzaRed};
+  ${({ disabled }) => disabled && `opacity: 0.5; pointer-events: none;`};
+  &:hover {
+    background-color: #ffe3e3;
+  }
+`;
+
 export const theme = createMuiTheme({
   typography: {
     fontFamily: ["Righteous"],
   },
 });
-
-export const pizzaRed = "#ef4123";
-const bg = `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`;
 
 export const useStyles = makeStyles({
   navbar: {
