@@ -6,11 +6,14 @@ import { formatPrice } from "../Data/FoodData";
 import {
   OrderStyled,
   OrderContent,
+  IncrementContainer,
+  IncrementButton,
   useStyles,
   pizzaRed,
 } from "../Styles/Styles";
 
 export const Order = ({ openDrawer, orders, setOrders }) => {
+  let [value, setValue] = React.useState(1);
   const classes = useStyles();
 
   const deleteItem = (index) => {
@@ -41,54 +44,93 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
             </OrderContent>
           ) : (
             orders.map((order, index) => (
-              <div className={classes.orderContainer}>
-                <div
-                  style={{
-                    width: "100%",
-                    marginBottom: "10px",
-                    borderBottom: "1px solid #000",
-                  }}
-                >
-                  <Grid container>
-                    <Grid item xs={12}>
-                      <Typography
-                        variant="h5"
-                        style={{
-                          color: `${pizzaRed}`,
-                          paddingBottom: "20px",
-                        }}
-                      >
-                        {order.name}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={5}>
-                      <Typography variant="h6">Quantity:</Typography>
-                    </Grid>
-                    <Grid item xs={3}>
-                      <Typography variant="h6">{order.size}</Typography>
-                    </Grid>
-                    <Grid item xs={3}>
-                      <Typography variant="h6">
-                        {formatPrice(order.price)}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={1}>
-                      <DeleteForeverIcon
-                        style={{
-                          color: `${pizzaRed}`,
-                          cursor: "pointer",
-                          marginBottom: "20px",
-                        }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          // console.log(order.quantity);
-                          deleteItem(index);
-                        }}
-                      />
-                    </Grid>
-                  </Grid>
-                </div>
-              </div>
+              <Motion
+                defaultStyle={{ x: 500 }}
+                style={{
+                  x: spring(order ? 0 : 500),
+                }}
+              >
+                {(style) => (
+                  <div
+                    className={classes.orderContainer}
+                    style={{
+                      transform: `translateX(${style.x}px)`,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "100%",
+                        marginBottom: "10px",
+                        borderBottom: "1px solid #000",
+                      }}
+                    >
+                      <Grid container>
+                        <Grid item xs={12}>
+                          <Typography
+                            variant="h5"
+                            style={{
+                              color: `${pizzaRed}`,
+                              paddingBottom: "20px",
+                            }}
+                          >
+                            {order.name}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={5}>
+                          <IncrementContainer>
+                            <IncrementButton
+                              onClick={() => {
+                                setValue((value -= 1));
+                                order.quantity -= 1;
+                              }}
+                              disabled={order.quantity === 1}
+                            >
+                              {" "}
+                              -{" "}
+                            </IncrementButton>
+                            <Typography
+                              variant="h6"
+                              style={{ padding: "0px 30px" }}
+                            >
+                              {order.quantity}
+                            </Typography>
+                            <IncrementButton
+                              onClick={() => {
+                                setValue((value += 1));
+                                order.quantity += 1;
+                              }}
+                            >
+                              {" "}
+                              +{" "}
+                            </IncrementButton>
+                          </IncrementContainer>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Typography variant="h6">{order.size}</Typography>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Typography variant="h6">
+                            {formatPrice(order.price * order.quantity)}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={1}>
+                          <DeleteForeverIcon
+                            style={{
+                              color: `${pizzaRed}`,
+                              cursor: "pointer",
+                              marginBottom: "20px",
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              deleteItem(index);
+                            }}
+                          />
+                        </Grid>
+                      </Grid>
+                    </div>
+                  </div>
+                )}
+              </Motion>
             ))
           )}
         </OrderStyled>

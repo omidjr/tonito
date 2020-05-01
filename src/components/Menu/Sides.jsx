@@ -79,6 +79,7 @@ export const Sides = ({ orders, setOrders }) => {
                             name: food.name,
                             size: "Single",
                             price: food.price[0],
+                            quantity: 1,
                           };
                           setOrders([...orders, orderSingle]);
                         }}
@@ -108,6 +109,7 @@ export const Sides = ({ orders, setOrders }) => {
                             name: food.name,
                             size: "Family",
                             price: food.price[1],
+                            quantity: 1,
                           };
                           setOrders([...orders, orderFamily]);
                         }}

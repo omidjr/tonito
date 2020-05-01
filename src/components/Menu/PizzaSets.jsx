@@ -96,6 +96,7 @@ export const PizzaSets = ({ orders, setOrders }) => {
                             name: food.name,
                             size: "22cm",
                             price: food.price[0],
+                            quantity: 1,
                           };
                           setOrders([...orders, order22]);
                         }}
@@ -125,6 +126,7 @@ export const PizzaSets = ({ orders, setOrders }) => {
                             name: food.name,
                             size: "29cm",
                             price: food.price[1],
+                            quantity: 1,
                           };
                           setOrders([...orders, order29]);
                         }}

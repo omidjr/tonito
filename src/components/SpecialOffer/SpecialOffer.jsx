@@ -51,6 +51,7 @@ export const SpecialOffer = ({ orders, setOrders }) => {
                 name: "Hawaiian",
                 size: "22cm",
                 price: 9.99,
+                quantity: 1,
               };
               setOrders([...orders, order22]);
             }}
