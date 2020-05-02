@@ -31,12 +31,13 @@ export const OrderStyled = styled.div`
   position: fixed;
   right: 0px;
   top: 55px;
-  width: 30%;
-  height: calc(100% - 55px);
+  width: 25%;
+  height: calc(100% - 72px);
   z-index: 999;
   padding-top: 15px;
   background-color: white;
   overflow: auto;
+  overflow-x: hidden;
   border: 1px solid #efefef;
   display: flex;
   flex-direction: column;
@@ -47,11 +48,13 @@ export const OrderStyled = styled.div`
     width: 40%;
   }
   @media (min-width: 1025px) {
-    width: 30%;
+    width: 25%;
   }
 `;
 
 export const OrderContent = styled.div`
+  overflow: auto;
+  overflow-x: hidden;
   padding: 20px;
   height: 100%;
   ${({ emptyCart }) =>
@@ -67,12 +70,44 @@ export const OrderContent = styled.div`
       max-width: 275px;
     }
     & span {
-      color: #ccc;
+      color: #949494;
       text-align: center;
     }
   } 
   }`
       : ``}
+`;
+
+export const OrderMenuFooter = styled.div`
+  box-shadow: 0px -2px 10px 0px grey;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ConfirmButton = styled.div`
+  margin: 10px;
+  font-size: 20px;
+  color: white;
+  background: ${bg};
+  border-radius: 5px;
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  ${({ disabled }) =>
+    disabled &&
+    `
+    opacity: 0.5;
+    background-color: grey;
+    pointer-events: none;
+  `}
+`;
+
+export const OrderContainer = styled.div`
+  padding: 10px 0px;
+  border-bottom: 1px solid grey;
 `;
 
 export const QuantityInputStyled = styled.input`
@@ -96,7 +131,7 @@ export const IncrementButton = styled.div`
   text-align: center;
   cursor: pointer;
   line-height: 23px;
-  margin-top: 6px;
+  margin-top: 5px;
   border: 1px solid ${pizzaRed};
   ${({ disabled }) => disabled && `opacity: 0.5; pointer-events: none;`};
   &:hover {
@@ -276,9 +311,11 @@ export const useStyles = makeStyles({
     borderTopLeftRadius: "18px",
     borderTopRightRadius: "18px",
   },
-  orderContainer: {
-    marginRight: "8%",
-    marginLeft: "8%",
-    marginTop: "10px",
+  checkoutButton: {
+    color: "#fff",
+    background: `${bg}`,
+    width: "250px",
+    padding: "10px",
+    margin: "10px",
   },
 });
