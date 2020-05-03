@@ -8,6 +8,7 @@ import { Features } from "./components/Features/Features";
 import { Menu } from "./components/Menu/Menu";
 import { SpecialOffer } from "./components/SpecialOffer/SpecialOffer";
 import { Tiles } from "./components/Tiles/Tiles";
+import { MobileApp } from "./components/MobileApp/MobileApp";
 import { Gallery } from "./components/Gallery/Gallery";
 import { Footer } from "./components/Footer/Footer";
 import { useOpenDrawer } from "./components/Hook/useOpenDrawer";
@@ -32,6 +33,7 @@ function App() {
         <Menu {...orders} />
         <SpecialOffer {...orders} />
         <Tiles />
+        <MobileApp />
         <Gallery />
         <Footer />
       </MuiThemeProvider>
