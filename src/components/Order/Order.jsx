@@ -4,6 +4,7 @@ import { OrderFooter } from "./OrderFooter";
 import { OrderFooterDisabled } from "./OrderFooterDisabled";
 import { Motion, spring } from "react-motion";
 import { Typography, Grid } from "@material-ui/core";
+import { useSnackbar } from "notistack";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import { formatPrice } from "../Data/FoodData";
 import {
@@ -17,6 +18,7 @@ import {
 
 export const Order = ({ openDrawer, orders, setOrders }) => {
   let [value, setValue] = React.useState(1);
+  const { enqueueSnackbar } = useSnackbar();
 
   const getPrice = (order) => {
     return order.quantity * order.price;
@@ -34,6 +36,10 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
     const newOrders = [...orders];
     newOrders.splice(index, 1);
     setOrders(newOrders);
+  };
+
+  const handleClickVariant = (variant, order) => {
+    enqueueSnackbar(`${order.name} was deleted`, { variant });
   };
 
   return (
@@ -125,6 +131,7 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
                               onClick={(e) => {
                                 e.stopPropagation();
                                 deleteItem(index);
+                                handleClickVariant("info", order);
                               }}
                             />
                           </Grid>
@@ -140,7 +147,7 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
           {orders.length === 0 ? (
             <OrderFooterDisabled disabled />
           ) : (
-            <OrderFooter />
+            <OrderFooter orders={orders} total={total} />
           )}
         </OrderStyled>
       )}

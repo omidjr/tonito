@@ -1,6 +1,7 @@
 import React from "react";
 import { responsiveFontSizes, MuiThemeProvider } from "@material-ui/core";
 import { theme } from "./components/Styles/Styles";
+import { SnackbarProvider } from "notistack";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Banner } from "./components/Banner/Banner";
 import { Features } from "./components/Features/Features";
@@ -23,7 +24,9 @@ function App() {
     <>
       <MuiThemeProvider theme={newTheme}>
         <NavBar {...openDrawer} {...orders} />
-        <Order {...openDrawer} {...orders} />
+        <SnackbarProvider maxSnack={3} autoHideDuration="2700">
+          <Order {...openDrawer} {...orders} />
+        </SnackbarProvider>
         <Banner />
         <Features />
         <Menu {...orders} />
