@@ -139,6 +139,51 @@ export const IncrementButton = styled.div`
   }
 `;
 
+export const MbAppImage = styled.div`
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 0px) and (max-width: 959px) {
+    img {
+      display: none;
+    }
+  }
+`;
+
+export const MbAppContent = styled.div`
+  #mb-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+    margin-bottom: 85px;
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 547px) {
+    #mb-content {
+      margin-top: 85px;
+      margin-bottom: 85px;
+    }
+    input[type="text"] {
+      font-size: 15px;
+      width: 100%;
+      height: 40px;
+      padding: 0 25px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      padding: 0 25px;
+      border-radius: 8px;
+    }
+    }
+  }
+`;
+
 export const theme = createMuiTheme({
   typography: {
     fontFamily: ["Righteous"],
@@ -240,13 +285,14 @@ export const useStyles = makeStyles({
     color: "#fff",
     top: "50%",
     left: "50%",
-    transform: "translate(-63%, -50%)",
+    transform: "translate(-50%, -50%)",
   },
   preTitle: {
     position: "relative",
     paddingTop: "20px",
   },
   productPrice: {
+    fontFamily: ["Righteous"],
     fontSize: "6.625em",
     color: "#fff",
     lineHeight: "0.6em",
