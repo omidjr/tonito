@@ -390,6 +390,7 @@ export const useStyles = makeStyles({
   linkButton: {
     position: "relative",
     display: "inline-block",
+    bottom: "2px",
     fontSize: "14px",
     boxSizing: "border-box",
     fontFamily: ["Righteous"],

@@ -73,7 +73,10 @@ export const Sides = ({ orders, setOrders }) => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ fontSize: "1rem" }}
+                        style={{
+                          fontSize: "1rem",
+                          borderRadius: "20px  0 20px 0",
+                        }}
                         onClick={() => {
                           orderSingle = {
                             name: food.name,
@@ -103,7 +106,10 @@ export const Sides = ({ orders, setOrders }) => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ fontSize: "1rem" }}
+                        style={{
+                          fontSize: "1rem",
+                          borderRadius: "20px  0 20px 0",
+                        }}
                         onClick={() => {
                           orderFamily = {
                             name: food.name,

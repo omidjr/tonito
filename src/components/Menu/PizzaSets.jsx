@@ -90,7 +90,10 @@ export const PizzaSets = ({ orders, setOrders }) => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ fontSize: "1rem" }}
+                        style={{
+                          fontSize: "1rem",
+                          borderRadius: "20px  0 20px 0",
+                        }}
                         onClick={() => {
                           order22 = {
                             name: food.name,
@@ -120,7 +123,10 @@ export const PizzaSets = ({ orders, setOrders }) => {
                       <Button
                         className={classes.cart}
                         variant="contained"
-                        style={{ fontSize: "1rem" }}
+                        style={{
+                          fontSize: "1rem",
+                          borderRadius: "20px  0 20px 0",
+                        }}
                         onClick={() => {
                           order29 = {
                             name: food.name,
