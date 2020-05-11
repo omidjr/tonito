@@ -14,29 +14,44 @@ import { Footer } from "./components/Footer/Footer";
 import { useOpenDrawer } from "./components/Hook/useOpenDrawer";
 import { Order } from "./components/Order/Order";
 import { useOrders } from "./components/Hook/useOrders";
+import { Loading } from "./components/Loading/Loading";
 
 const newTheme = responsiveFontSizes(theme);
 
 function App() {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   const openDrawer = useOpenDrawer();
   const orders = useOrders();
 
   return (
     <>
-      <MuiThemeProvider theme={newTheme}>
-        <NavBar {...openDrawer} {...orders} />
-        <SnackbarProvider maxSnack={3} autoHideDuration="2700">
-          <Order {...openDrawer} {...orders} />
-        </SnackbarProvider>
-        <Banner />
-        <Features />
-        <Menu {...orders} />
-        <SpecialOffer {...orders} />
-        <Tiles />
-        <MobileApp />
-        <Gallery />
-        <Footer />
-      </MuiThemeProvider>
+      {loading ? (
+        <MuiThemeProvider theme={newTheme}>
+          <Loading />
+        </MuiThemeProvider>
+      ) : (
+        <MuiThemeProvider theme={newTheme}>
+          <NavBar {...openDrawer} {...orders} />
+          <SnackbarProvider maxSnack={3} autoHideDuration="2700">
+            <Order {...openDrawer} {...orders} />
+          </SnackbarProvider>
+          <Banner />
+          <Features />
+          <Menu {...orders} />
+          <SpecialOffer {...orders} />
+          <Tiles />
+          <MobileApp />
+          <Gallery />
+          <Footer />
+        </MuiThemeProvider>
+      )}
     </>
   );
 }
