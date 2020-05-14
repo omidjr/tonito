@@ -45,7 +45,7 @@ export const SpecialOffer = ({ orders, setOrders }) => {
           <Button
             className={classes.cart}
             variant="contained"
-            style={{ fontSize: "1rem" }}
+            style={{ fontSize: "1rem", borderRadius: "0px 20px 20px 20px" }}
             onClick={() => {
               order22 = {
                 name: "Hawaiian",

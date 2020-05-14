@@ -125,7 +125,7 @@ export const PizzaSets = ({ orders, setOrders }) => {
                         variant="contained"
                         style={{
                           fontSize: "1rem",
-                          borderRadius: "20px  0 20px 0",
+                          borderRadius: "20px  0px 20px 0px",
                         }}
                         onClick={() => {
                           order29 = {
