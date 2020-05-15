@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { useStyles, pizzaRed } from "../Styles/Styles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import {
   AppBar,
   Toolbar,
@@ -29,22 +30,39 @@ export const NavBar = ({ openDrawer, setOpenDrawer, orders }) => {
     <Grid container>
       <AppBar position="fixed" className={classes.navbar}>
         <Toolbar>
-          <Button className={classes.signUpButton} variant="outlined">
-            Login
-          </Button>
-          <Grid xs={6} />
           <Typography className={classes.logo} variant="h3">
             Tonito
           </Typography>
-          <Grid xs={6} />
-          <IconButton
-            aria-label="cart"
-            onClick={() => setOpenDrawer(!openDrawer)}
+          <Grid xs={12} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <StyledBadge badgeContent={orders.length} color="secondary">
-              <ShoppingCartIcon style={{ color: "#000" }} />
-            </StyledBadge>
-          </IconButton>
+            <Button className={classes.signUpButton} variant="outlined">
+              <PersonOutlineIcon /> Login
+            </Button>
+            <Typography
+              style={{
+                color: "#E0E0E2",
+                height: "100%",
+                paddingLeft: "10px",
+              }}
+            >
+              {" "}
+              |{" "}
+            </Typography>
+            <IconButton
+              aria-label="cart"
+              onClick={() => setOpenDrawer(!openDrawer)}
+            >
+              <StyledBadge badgeContent={orders.length} color="secondary">
+                <ShoppingCartIcon style={{ color: "#000" }} />
+              </StyledBadge>
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
     </Grid>

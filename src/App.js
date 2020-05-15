@@ -32,20 +32,6 @@ function App() {
 
   return (
     <>
-      {/* <MuiThemeProvider theme={newTheme}>
-        <NavBar {...openDrawer} {...orders} />
-        <SnackbarProvider maxSnack={3} autoHideDuration="2700">
-          <Order {...openDrawer} {...orders} />
-        </SnackbarProvider>
-        <Banner />
-        <Features />
-        <Menu {...orders} />
-        <SpecialOffer {...orders} />
-        <Tiles />
-        <MobileApp />
-        <Gallery />
-        <Footer />
-      </MuiThemeProvider> */}
       {loading ? (
         <MuiThemeProvider theme={newTheme}>
           <Loading />

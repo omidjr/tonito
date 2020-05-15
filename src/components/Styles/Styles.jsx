@@ -201,6 +201,7 @@ export const useStyles = makeStyles({
   signUpButton: {
     color: `${pizzaRed}`,
     border: `1px solid ${pizzaRed}`,
+    padding: "5px",
   },
   cart: {
     color: "#fff",

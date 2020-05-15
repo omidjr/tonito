@@ -1,5 +1,5 @@
 import React from "react";
-import { useStyles, pizzaRed } from "../Styles/Styles";
+import { useStyles } from "../Styles/Styles";
 import { Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 
