@@ -5,6 +5,58 @@ import styled from "styled-components";
 export const pizzaRed = "#ef4123";
 const bg = `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`;
 
+export const BannerContent = styled.div`
+  z-index: 3;
+  position: relative;
+  & h1 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 13rem;
+  }
+  & h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #ef4123;
+  }
+  & h1:nth-child(2) {
+    color: #ef4123;
+    animation: animate 3s ease-in-out infinite;
+  }
+  @keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 45%,
+        15% 44%,
+        32% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        16% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 650px) {
+    h1 {
+      font-size: 6.5rem;
+    }
+  }
+`;
+
 export const FeatureImage = styled.div`
   min-height: 250px;
   border-radius: 7px;
@@ -224,7 +276,7 @@ export const useStyles = makeStyles({
     position: "absolute",
     background: "#000",
     zIndex: "1",
-    opacity: "0.85",
+    opacity: "0.94",
   },
   bannerHeader: {
     position: "absolute",
