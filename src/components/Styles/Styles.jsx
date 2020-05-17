@@ -262,7 +262,6 @@ export const useStyles = makeStyles({
   banner: {
     height: "100vh",
     width: "100%",
-    marginBottom: "60px",
     backgroundImage: 'url("img/other/showcase.jpg")',
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -310,17 +309,9 @@ export const useStyles = makeStyles({
     borderRadius: "1px",
   },
   menu: {
-    backgroundColor: "#e2e2e2",
+    backgroundColor: "#ececec",
     marginTop: "5px",
-    transitionProperty: "box-shadow margin-top",
-    transitionDuration: "0.2s",
-    boxShadow: "0px 0px 2px 0px grey",
     borderRadius: "7px",
-    "&:hover": {
-      marginTop: "0px",
-      marginBottom: "5px",
-      boxShadow: "0px 5px 10px 0px grey",
-    },
   },
   menuLabel: {
     paddingTop: "30px",

@@ -1,6 +1,8 @@
 import React from "react";
 import { Grid, Typography, Button } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { useStyles, FeatureImage } from "../Styles/Styles";
 import { FoodData, formatPrice } from "../Data/FoodData";
 
@@ -9,6 +11,7 @@ export const Drinks = ({ orders, setOrders }) => {
   const classes = useStyles();
 
   React.useEffect(() => {
+    Aos.init({ duration: 800 });
     setLoading(false);
     setTimeout(() => {
       setLoading(true);
@@ -23,7 +26,7 @@ export const Drinks = ({ orders, setOrders }) => {
       {FoodData.map((food) =>
         food.item === "Drinks" ? (
           <Grid item xs={12} sm={6} md={4}>
-            <div className={classes.menu}>
+            <div className={classes.menu} data-aos="zoom-in">
               {loading && food.img ? (
                 <FeatureImage img={food.img} />
               ) : (
