@@ -1,3 +1,5 @@
+import uuid from "uuid/dist/v1";
+
 export const formatPrice = (price) => {
   return price.toLocaleString("en-US", {
     style: "currency",
@@ -7,6 +9,7 @@ export const formatPrice = (price) => {
 
 export const FoodData = [
   {
+    id: uuid(),
     name: "California Style",
     img: "/img/food/pizza/california-style-pizza.jpg",
     section: "Top",
@@ -14,6 +17,7 @@ export const FoodData = [
     price: [15, 19],
   },
   {
+    id: uuid(),
     name: "Hawaiian",
     img: "/img/food/pizza/hawaiian-pizza.jpg",
     section: "Top",
@@ -21,6 +25,7 @@ export const FoodData = [
     price: [9.99, 19],
   },
   {
+    id: uuid(),
     name: "Greek Style",
     img: "/img/food/pizza/greek-style-pizza.jpg",
     section: "Top",
@@ -28,6 +33,7 @@ export const FoodData = [
     price: [14, 18],
   },
   {
+    id: uuid(),
     name: "Sicilian",
     img: "/img/food/pizza/sicilian-pizza.jpg",
     section: "Top",
@@ -35,6 +41,7 @@ export const FoodData = [
     price: [17, 21],
   },
   {
+    id: uuid(),
     name: "Seafood Pizza",
     img: "/img/food/pizza/pizza-ai-frutti-di-mare.jpg",
     section: "Special",
@@ -42,6 +49,7 @@ export const FoodData = [
     price: [11, 15],
   },
   {
+    id: uuid(),
     name: "Diavola",
     img: "/img/food/pizza/pizza-alla-diavola.jpg",
     section: "Special",
@@ -49,6 +57,7 @@ export const FoodData = [
     price: [12.5, 16.5],
   },
   {
+    id: uuid(),
     name: "Ortolana",
     img: "/img/food/pizza/pizza-ortolana.jpg",
     section: "Special",
@@ -56,6 +65,7 @@ export const FoodData = [
     price: [13, 17],
   },
   {
+    id: uuid(),
     name: "Carbonara",
     img: "/img/food/pizza/pizza-carbonara.jpg",
     section: "Special",
@@ -63,6 +73,7 @@ export const FoodData = [
     price: [13.5, 17.5],
   },
   {
+    id: uuid(),
     name: "Rustica",
     img: "/img/food/pizza/pizza-rustica.jpg",
     section: "Special",
@@ -70,54 +81,63 @@ export const FoodData = [
     price: [13, 17],
   },
   {
+    id: uuid(),
     name: "Fries",
     img: "/img/food/sides/fries.jpeg",
     item: "Sides",
     price: [6, 10],
   },
   {
+    id: uuid(),
     name: "Olives",
     img: "/img/food/sides/olives.jpg",
     item: "Sides",
     price: [7, 11],
   },
   {
+    id: uuid(),
     name: "Caesar Salad",
     img: "/img/food/sides/salad.jpg",
     item: "Sides",
     price: [8.5, 12.5],
   },
   {
+    id: uuid(),
     name: "Mexican Corn",
     img: "/img/food/sides/corn.jpg",
     item: "Sides",
     price: [8.5, 12.5],
   },
   {
+    id: uuid(),
     name: "CokaCola",
     img: "/img/food/drinks/cokacola.jpg",
     item: "Drinks",
     price: [3, 7],
   },
   {
+    id: uuid(),
     name: "Pepsi",
     img: "/img/food/drinks/pepsi.jpg",
     item: "Drinks",
     price: [3, 7],
   },
   {
+    id: uuid(),
     name: "Sprite",
     img: "/img/food/drinks/sprite.jpg",
     item: "Drinks",
     price: [3, 7],
   },
   {
+    id: uuid(),
     name: "Fanta",
     img: "/img/food/drinks/fanta.jpg",
     item: "Drinks",
     price: [3, 7],
   },
   {
+    id: uuid(),
     name: "Mineral Water",
     img: "/img/food/drinks/mineral-water.jpg",
     item: "Drinks",

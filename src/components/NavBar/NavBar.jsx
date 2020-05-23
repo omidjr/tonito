@@ -2,12 +2,10 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { useStyles, pizzaRed } from "../Styles/Styles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   IconButton,
   Badge,
   Grid,
@@ -33,7 +31,7 @@ export const NavBar = ({ openDrawer, setOpenDrawer, orders }) => {
           <Typography className={classes.logo} variant="h3">
             Tonito
           </Typography>
-          <Grid xs={12} />
+          <Grid item xs={12} />
           <div
             style={{
               display: "flex",

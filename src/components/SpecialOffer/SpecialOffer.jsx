@@ -27,10 +27,10 @@ export const SpecialOffer = ({ orders, setOrders }) => {
             <Grid item xs={12}>
               <div className={classes.productPrice}>
                 <span className={classes.price}>
-                  <span class={classes.currency}> $</span>
+                  <span className={classes.currency}> $</span>
                   <span style={{ color: "#23ef91" }}>9</span>
-                  <span class={classes.decimals}>99</span>
-                  <span class={classes.priceInfo}>$15.00</span>
+                  <span className={classes.decimals}>99</span>
+                  <span className={classes.priceInfo}>$15.00</span>
                 </span>
               </div>
             </Grid>

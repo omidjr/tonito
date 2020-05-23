@@ -40,7 +40,7 @@ export const Features = () => {
               </Label>
             </FeatureImage>
           </Grid>
-          <Grid item xs={12} md={4} wrap="wrap">
+          <Grid item xs={12} md={4}>
             <FeatureImage
               img={"img/other/coupon.jpg"}
               data-aos="zoom-in"

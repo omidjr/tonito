@@ -25,7 +25,7 @@ export const Sides = ({ orders, setOrders }) => {
     <Grid container spacing={3}>
       {FoodData.map((food) =>
         food.item === "Sides" ? (
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} key={food.id}>
             <div className={classes.menu} data-aos="zoom-in">
               {loading && food.img ? (
                 <FeatureImage img={food.img} />
