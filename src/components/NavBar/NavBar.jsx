@@ -41,19 +41,6 @@ export const NavBar = ({ openDrawer, setOpenDrawer, orders }) => {
               alignItems: "center",
             }}
           >
-            <Button className={classes.signUpButton} variant="outlined">
-              <PersonOutlineIcon /> Login
-            </Button>
-            <Typography
-              style={{
-                color: "#E0E0E2",
-                height: "100%",
-                paddingLeft: "10px",
-              }}
-            >
-              {" "}
-              |{" "}
-            </Typography>
             <IconButton
               aria-label="cart"
               onClick={() => setOpenDrawer(!openDrawer)}
