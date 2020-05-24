@@ -236,6 +236,36 @@ export const MbAppContent = styled.div`
   }
 `;
 
+export const ContactUS = styled.section`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0d192e;
+
+  @media (max-width: 991px) {
+    #cc #fb {
+      width: 100%;
+      padding: 0 50px;
+    }
+    #cc #fb form {
+      width: 100%;
+      max-width: 500px;
+      padding: 0;
+    }
+    #cc #fb form input[type="submit"] {
+      border-radius: 13px;
+      width: 100%;
+    }
+    #cc #ib {
+      display: none;
+    }
+  }
+`;
+
 export const theme = createMuiTheme({
   typography: {
     fontFamily: ["Righteous"],
@@ -474,5 +504,121 @@ export const useStyles = makeStyles({
     borderRadius: "10px",
     background: "#000",
     cursor: "pointer",
+  },
+  contactContainer: {
+    position: "relative",
+    width: "100%",
+    maxWidth: "1100px",
+    margin: "20px",
+    height: "600px",
+    background: "#122647",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  formBox: {
+    width: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "& form": {
+      position: "relative",
+      width: "100%",
+      padding: "0 0 0 75px",
+      "& h3": {
+        color: "#fff",
+        textTransform: "uppercase",
+        letterSpacing: "2px",
+        marginBottom: "40px",
+      },
+    },
+  },
+  inputBox: {
+    position: "relative",
+    marginBottom: "40px",
+    "&:last-child": {
+      marginBottom: "0px",
+    },
+    "& input, textarea": {
+      fontFamily: ["Righteous"],
+      position: "relative",
+      background: "transparent",
+      outline: "none",
+      border: "none",
+      width: "100%",
+      color: "#fff",
+      paddingBottom: "10px",
+      fontSize: "16px",
+      letterSpacing: "1px",
+      fontWeight: "300",
+      borderBottom: "2px solid rgba(255, 255, 255, 0.5)",
+      resize: "none",
+    },
+    "& textarea": {
+      height: "100px",
+    },
+    "& input[type='submit']": {
+      padding: "8px 20px",
+      marginTop: "-10px",
+      width: "100px",
+      cursor: "pointer",
+      background: `${bg}`,
+      color: "#fff",
+      fontSize: "18px",
+      fontWeight: "400",
+      border: "none",
+      textTransform: "uppercase",
+      borderRadius: "13px 13px 13px 0",
+    },
+    "& span": {
+      position: "absolute",
+      left: "0",
+      fontSize: "16px",
+      fontWeight: "300",
+      display: "inline-block",
+      pointerEvents: "none",
+      letterSpacing: "1px",
+      color: "rgba(255, 255, 255, 0.5)",
+      transition: "all 0.2s",
+    },
+    "& input:focus ~ span, textarea:focus ~ span": {
+      transform: "translateY(-24px)",
+      color: "#1bfaad",
+      fontSize: "14px",
+    },
+    "& input:valid ~ span, textarea:valid ~ span": {
+      transform: "translateY(-24px)",
+      color: "#1bfaad",
+      fontSize: "14px",
+    },
+    "& input:focus, textarea:focus": {
+      borderBottomColor: "#fff",
+    },
+    "& input:valid, textarea:valid": {
+      borderBottomColor: "#fff",
+    },
+  },
+  imgBox: {
+    position: "relative",
+    width: "50%",
+    height: "100%",
+    overflow: "hidden",
+    "&:before": {
+      content: "''",
+      position: "absolute",
+      top: "0",
+      left: "0",
+      width: "100%",
+      height: "100%",
+      background: `${bg}`,
+      transformOrigin: "bottom",
+      transform: "skewX(-25deg) translateX(10%)",
+    },
+    "& img": {
+      position: "absolute",
+      bottom: "110px",
+      transform: "rotate(110deg)",
+      maxHeigh: "100%",
+    },
   },
 });

@@ -15,6 +15,7 @@ import { useOpenDrawer } from "./components/Hook/useOpenDrawer";
 import { Order } from "./components/Order/Order";
 import { useOrders } from "./components/Hook/useOrders";
 import { Loading } from "./components/Loading/Loading";
+import { ContactUs } from "./components/ContactUs/ContactUs";
 
 const newTheme = responsiveFontSizes(theme);
 
@@ -48,6 +49,7 @@ function App() {
           <SpecialOffer {...orders} />
           <Tiles />
           <MobileApp />
+          <ContactUs />
           <Gallery />
           <Footer />
         </MuiThemeProvider>
