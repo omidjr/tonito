@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/styles";
 import styled from "styled-components";
 
 export const pizzaRed = "#ef4123";
-const bg = `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`;
+export const bg = `linear-gradient(-60deg, ${pizzaRed}, #ef2379)`;
 
 export const BannerContent = styled.div`
   z-index: 3;
@@ -568,7 +568,7 @@ export const useStyles = makeStyles({
       fontWeight: "400",
       border: "none",
       textTransform: "uppercase",
-      borderRadius: "13px 13px 13px 0",
+      borderRadius: "0px 20px 0px 20px",
     },
     "& span": {
       position: "absolute",

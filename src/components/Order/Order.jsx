@@ -16,7 +16,7 @@ import {
   pizzaRed,
 } from "../Styles/Styles";
 
-export const Order = ({ openDrawer, orders, setOrders }) => {
+export const Order = ({ openDrawer, orders, setOrders, setStep }) => {
   let [value, setValue] = React.useState(1);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -147,7 +147,7 @@ export const Order = ({ openDrawer, orders, setOrders }) => {
           {orders.length === 0 ? (
             <OrderFooterDisabled disabled />
           ) : (
-            <OrderFooter orders={orders} total={total} />
+            <OrderFooter orders={orders} total={total} setStep={setStep} />
           )}
         </OrderStyled>
       )}
