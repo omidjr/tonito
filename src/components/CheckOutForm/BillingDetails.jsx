@@ -86,8 +86,7 @@ export const BillingDetails = () => {
               style={{ width: "100%" }}
             />
           </Grid>
-
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ margin: "0 auto", textAlign: "center" }}>
             <MbAppContent>
               <form style={{ marginBottom: "30px", marginTop: "30px" }}>
                 <input
