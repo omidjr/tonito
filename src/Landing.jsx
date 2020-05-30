@@ -19,7 +19,7 @@ import { ContactUs } from "./components/ContactUs/ContactUs";
 
 const newTheme = responsiveFontSizes(theme);
 
-export const Landing = ({ setStep }) => {
+export const Landing = ({ setStep, setTotalPrice }) => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -41,7 +41,12 @@ export const Landing = ({ setStep }) => {
         <MuiThemeProvider theme={newTheme}>
           <NavBar {...openDrawer} {...orders} />
           <SnackbarProvider maxSnack={3} autoHideDuration="2700">
-            <Order {...openDrawer} {...orders} setStep={setStep} />
+            <Order
+              {...openDrawer}
+              {...orders}
+              setStep={setStep}
+              setTotalPrice={setTotalPrice}
+            />
           </SnackbarProvider>
           <Banner />
           <Features />

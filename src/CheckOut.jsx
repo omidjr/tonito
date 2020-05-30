@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 
 const newTheme = responsiveFontSizes(theme);
 
-export const CheckOut = ({ setStep }) => {
+export const CheckOut = ({ setStep, totalPrice }) => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ export const CheckOut = ({ setStep }) => {
         </MuiThemeProvider>
       ) : (
         <MuiThemeProvider theme={newTheme}>
-          <CheckOutForm setStep={setStep} />
+          <CheckOutForm setStep={setStep} totalPrice={totalPrice} />
           <Footer />
         </MuiThemeProvider>
       )}

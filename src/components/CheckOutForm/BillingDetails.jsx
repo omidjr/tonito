@@ -1,7 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/styles";
-import { Typography, Grid, TextField, Button } from "@material-ui/core";
-import { pizzaRed, bg } from "../Styles/Styles";
+import { Typography, Grid, TextField } from "@material-ui/core";
+import { useStyles, MbAppContent, pizzaRed } from "../Styles/Styles";
 
 const CssTextField = withStyles({
   root: {
@@ -22,7 +22,9 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-export const BillingDetails = ({ setStep }) => {
+export const BillingDetails = () => {
+  const classes = useStyles();
+
   return (
     <>
       <Typography
@@ -84,19 +86,24 @@ export const BillingDetails = ({ setStep }) => {
               style={{ width: "100%" }}
             />
           </Grid>
-          <Grid item xs={2}>
-            <Button
-              style={{
-                width: "100%",
-                background: `${bg}`,
-                color: "#fff",
-                fontSize: "1rem",
-                borderRadius: "1px 15px 15px 15px",
-              }}
-              onClick={() => setStep(1)}
-            >
-              Cancel
-            </Button>
+
+          <Grid item xs={12}>
+            <MbAppContent>
+              <form style={{ marginBottom: "30px", marginTop: "30px" }}>
+                <input
+                  className={classes.linkInput}
+                  type="text"
+                  placeholder="Coupon Code"
+                />
+                <input
+                  className={classes.linkButton}
+                  type="submit"
+                  value="Apply Coupon"
+                  onClick={(e) => e.preventDefault()}
+                  style={{ background: "#333E48" }}
+                />
+              </form>
+            </MbAppContent>
           </Grid>
         </Grid>
       </div>

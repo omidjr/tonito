@@ -9,8 +9,12 @@ import {
   FormControl,
 } from "@material-ui/core";
 import { bg } from "../Styles/Styles";
+import { formatPrice } from "../Data/FoodData";
 
-export const OrderDetails = () => {
+const deliveryPrice = 9.99;
+const discount = 4.99;
+
+export const OrderDetails = ({ setStep, totalPrice }) => {
   const [value, setValue] = React.useState("Direct Bank Transfer");
 
   const handleChange = (event) => {
@@ -24,19 +28,21 @@ export const OrderDetails = () => {
           <Typography variant="subtitle1">Total Price</Typography>
         </Grid>
         <Grid item xs={3}>
-          <Typography variant="subtitle1">30</Typography>
+          <Typography variant="subtitle1">{formatPrice(totalPrice)}</Typography>
         </Grid>
         <Grid item xs={9}>
           <Typography variant="subtitle1">Delivery Price</Typography>
         </Grid>
         <Grid item xs={3}>
-          <Typography variant="subtitle1">10</Typography>
+          <Typography variant="subtitle1">
+            {formatPrice(deliveryPrice)}
+          </Typography>
         </Grid>
         <Grid item xs={9}>
           <Typography variant="subtitle1">Discount</Typography>
         </Grid>
         <Grid item xs={3}>
-          <Typography variant="subtitle1">0</Typography>
+          <Typography variant="subtitle1">{formatPrice(discount)}</Typography>
         </Grid>
         <Grid item xs={12}>
           <div style={{ width: "100%", borderBottom: "2px solid" }} />
@@ -45,7 +51,9 @@ export const OrderDetails = () => {
           <Typography variant="subtitle1">Total</Typography>
         </Grid>
         <Grid item xs={3}>
-          <Typography variant="subtitle1">40</Typography>
+          <Typography variant="subtitle1">
+            {formatPrice(totalPrice + deliveryPrice - discount)}
+          </Typography>
         </Grid>
         <Grid item xs={12}>
           <FormControl component="fieldset">
@@ -97,17 +105,31 @@ export const OrderDetails = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <Button
             style={{
               width: "100%",
               background: `${bg}`,
               color: "#fff",
-              fontSize: "1.5rem",
+              fontSize: "1rem",
               borderRadius: "30px",
             }}
           >
             Place Order
+          </Button>
+        </Grid>
+        <Grid item xs={6}>
+          <Button
+            style={{
+              width: "100%",
+              background: `${bg}`,
+              color: "#fff",
+              fontSize: "1rem",
+              borderRadius: "30px",
+            }}
+            onClick={() => setStep(1)}
+          >
+            Cancel
           </Button>
         </Grid>
       </Grid>

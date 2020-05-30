@@ -4,7 +4,7 @@ import { useStyles, pizzaRed } from "../Styles/Styles";
 import { BillingDetails } from "./BillingDetails";
 import { OrderDetails } from "./OrderDetails";
 
-export const CheckOutForm = ({ setStep }) => {
+export const CheckOutForm = ({ setStep, totalPrice }) => {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,7 @@ export const CheckOutForm = ({ setStep }) => {
         </Typography>
         <Grid container spacing={5}>
           <Grid item xs={12} md={8}>
-            <BillingDetails setStep={setStep} />
+            <BillingDetails />
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography
@@ -32,7 +32,7 @@ export const CheckOutForm = ({ setStep }) => {
             >
               Order Details
             </Typography>
-            <OrderDetails />
+            <OrderDetails setStep={setStep} totalPrice={totalPrice} />
           </Grid>
         </Grid>
       </div>
