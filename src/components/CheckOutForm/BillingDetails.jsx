@@ -1,7 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/styles";
 import { Typography, Grid, TextField } from "@material-ui/core";
-import { useStyles, MbAppContent, pizzaRed } from "../Styles/Styles";
+import { useStyles, MbAppContent, pizzaRed, bg } from "../Styles/Styles";
 
 const CssTextField = withStyles({
   root: {
@@ -22,7 +22,7 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-export const BillingDetails = () => {
+export const BillingDetails = ({ userInfo, setUserInfo, initialState }) => {
   const classes = useStyles();
 
   return (
@@ -41,6 +41,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="Full Name"
               variant="outlined"
+              required="true"
+              value={userInfo.name}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, name: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -48,6 +53,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="Email Address"
               variant="outlined"
+              required="true"
+              value={userInfo.email}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, email: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -55,6 +65,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="Phone"
               variant="outlined"
+              required="true"
+              value={userInfo.phone}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, phone: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -62,6 +77,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="Country"
               variant="outlined"
+              required="true"
+              value={userInfo.country}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, country: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -69,6 +89,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="City / Town"
               variant="outlined"
+              required="true"
+              value={userInfo.city}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, city: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -76,6 +101,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="ZipCode"
               variant="outlined"
+              required="true"
+              value={userInfo.zipCode}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, zipCode: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -83,6 +113,11 @@ export const BillingDetails = () => {
             <CssTextField
               label="Address"
               variant="outlined"
+              required="true"
+              value={userInfo.address}
+              onChange={(e) => {
+                setUserInfo({ ...userInfo, address: e.target.value });
+              }}
               style={{ width: "100%" }}
             />
           </Grid>
@@ -93,13 +128,18 @@ export const BillingDetails = () => {
                   className={classes.linkInput}
                   type="text"
                   placeholder="Coupon Code"
+                  style={{ border: "1px solid #ccc" }}
                 />
                 <input
                   className={classes.linkButton}
                   type="submit"
                   value="Apply Coupon"
                   onClick={(e) => e.preventDefault()}
-                  style={{ background: "#333E48" }}
+                  style={{
+                    background: `${bg}`,
+                    color: "#000",
+                    filter: "invert(1)",
+                  }}
                 />
               </form>
             </MbAppContent>

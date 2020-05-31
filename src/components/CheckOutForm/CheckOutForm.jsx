@@ -5,6 +5,18 @@ import { BillingDetails } from "./BillingDetails";
 import { OrderDetails } from "./OrderDetails";
 
 export const CheckOutForm = ({ setStep, totalPrice }) => {
+  const initialState = {
+    name: "",
+    email: "",
+    phone: "",
+    country: "",
+    city: "",
+    zipCode: "",
+    address: "",
+  };
+
+  const [userInfo, setUserInfo] = React.useState(initialState);
+
   const classes = useStyles();
 
   return (
@@ -21,7 +33,11 @@ export const CheckOutForm = ({ setStep, totalPrice }) => {
         </Typography>
         <Grid container spacing={5}>
           <Grid item xs={12} md={8}>
-            <BillingDetails />
+            <BillingDetails
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
+              initialState={initialState}
+            />
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography
@@ -32,7 +48,13 @@ export const CheckOutForm = ({ setStep, totalPrice }) => {
             >
               Order Details
             </Typography>
-            <OrderDetails setStep={setStep} totalPrice={totalPrice} />
+            <OrderDetails
+              setStep={setStep}
+              totalPrice={totalPrice}
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
+              initialState={initialState}
+            />
           </Grid>
         </Grid>
       </div>

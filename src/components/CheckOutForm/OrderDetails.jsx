@@ -1,4 +1,6 @@
 import React from "react";
+import { PlaceOrder } from "./PlaceOrder";
+import { PlaceOrderDisabled } from "./PlaceOrderDisabled";
 import {
   Typography,
   Grid,
@@ -14,7 +16,13 @@ import { formatPrice } from "../Data/FoodData";
 const deliveryPrice = 9.99;
 const discount = 4.99;
 
-export const OrderDetails = ({ setStep, totalPrice }) => {
+export const OrderDetails = ({
+  setStep,
+  totalPrice,
+  userInfo,
+  setUserInfo,
+  initialState,
+}) => {
   const [value, setValue] = React.useState("Direct Bank Transfer");
 
   const handleChange = (event) => {
@@ -106,17 +114,27 @@ export const OrderDetails = ({ setStep, totalPrice }) => {
           </FormControl>
         </Grid>
         <Grid item xs={6}>
-          <Button
-            style={{
-              width: "100%",
-              background: `${bg}`,
-              color: "#fff",
-              fontSize: "1rem",
-              borderRadius: "30px",
-            }}
-          >
-            Place Order
-          </Button>
+          {userInfo.name === "" ? (
+            <PlaceOrderDisabled />
+          ) : userInfo.email === "" ? (
+            <PlaceOrderDisabled />
+          ) : userInfo.phone === "" ? (
+            <PlaceOrderDisabled />
+          ) : userInfo.country === "" ? (
+            <PlaceOrderDisabled />
+          ) : userInfo.city === "" ? (
+            <PlaceOrderDisabled />
+          ) : userInfo.zipCode === "" ? (
+            <PlaceOrderDisabled />
+          ) : userInfo.address === "" ? (
+            <PlaceOrderDisabled />
+          ) : (
+            <PlaceOrder
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
+              initialState={initialState}
+            />
+          )}
         </Grid>
         <Grid item xs={6}>
           <Button
