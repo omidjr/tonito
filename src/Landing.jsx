@@ -13,13 +13,12 @@ import { Gallery } from "./components/Gallery/Gallery";
 import { Footer } from "./components/Footer/Footer";
 import { useOpenDrawer } from "./components/Hook/useOpenDrawer";
 import { Order } from "./components/Order/Order";
-import { useOrders } from "./components/Hook/useOrders";
 import { Loading } from "./components/Loading/Loading";
 import { ContactUs } from "./components/ContactUs/ContactUs";
 
 const newTheme = responsiveFontSizes(theme);
 
-export const Landing = ({ setStep, setTotalPrice }) => {
+export const Landing = ({ orders, setOrders, setStep, setTotalPrice }) => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -29,7 +28,6 @@ export const Landing = ({ setStep, setTotalPrice }) => {
   }, []);
 
   const openDrawer = useOpenDrawer();
-  const orders = useOrders();
 
   return (
     <>
@@ -39,19 +37,20 @@ export const Landing = ({ setStep, setTotalPrice }) => {
         </MuiThemeProvider>
       ) : (
         <MuiThemeProvider theme={newTheme}>
-          <NavBar {...openDrawer} {...orders} />
+          <NavBar {...openDrawer} orders={orders} />
           <SnackbarProvider maxSnack={3} autoHideDuration="2700">
             <Order
               {...openDrawer}
-              {...orders}
+              orders={orders}
+              setOrders={setOrders}
               setStep={setStep}
               setTotalPrice={setTotalPrice}
             />
           </SnackbarProvider>
           <Banner />
           <Features />
-          <Menu {...orders} />
-          <SpecialOffer {...orders} />
+          <Menu orders={orders} setOrders={setOrders} />
+          <SpecialOffer orders={orders} setOrders={setOrders} />
           <Tiles />
           <MobileApp />
           <ContactUs />

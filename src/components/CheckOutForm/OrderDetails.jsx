@@ -133,6 +133,7 @@ export const OrderDetails = ({
               userInfo={userInfo}
               setUserInfo={setUserInfo}
               initialState={initialState}
+              setStep={setStep}
             />
           )}
         </Grid>

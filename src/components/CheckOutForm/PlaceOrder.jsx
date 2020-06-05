@@ -2,7 +2,12 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import { bg } from "../Styles/Styles";
 
-export const PlaceOrder = ({ userInfo, setUserInfo, initialState }) => {
+export const PlaceOrder = ({
+  userInfo,
+  setUserInfo,
+  initialState,
+  setStep,
+}) => {
   return (
     <Button
       style={{
@@ -16,6 +21,7 @@ export const PlaceOrder = ({ userInfo, setUserInfo, initialState }) => {
         e.preventDefault();
         console.log(userInfo);
         setUserInfo(initialState);
+        setStep(3);
       }}
     >
       Place Order
